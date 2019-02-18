@@ -1,0 +1,5 @@
+[mirrorrepo]
+name=My RPM System Package Repo
+baseurl=http://own-mirror-server.com/repo/
+enabled=1
+gpgcheck=0
