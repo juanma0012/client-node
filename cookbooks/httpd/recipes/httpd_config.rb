@@ -1,3 +1,3 @@
 service 'httpd' do
-  action [:enable,:start]
+    action [:enable,:start]
 end

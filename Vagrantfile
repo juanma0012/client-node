@@ -12,8 +12,13 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "base"
-
+  config.vm.box = "centos_7"
+  config.vm.provision :chef_solo do |chef|
+    chef.install = true
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "mirror-repo"
+    chef.add_recipe "httpd"
+  end  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
